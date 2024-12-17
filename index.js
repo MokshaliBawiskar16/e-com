@@ -10,6 +10,7 @@ const app=express()
 
 app.use(express.json()) //req.body me data aane k liye ye responsiable hai BODY PARSER
 app.use(cookieParser()) //REQ.COOKIE MADHE cooke anila
+app.use(express.static("dist"))//yacha madhe sarwa front-End aala aahe build karila front end backend madhe takla
 app.use(cors({
     origin:"http://localhost:5173",
     credentials:true
