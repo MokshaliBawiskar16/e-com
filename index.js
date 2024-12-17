@@ -1,6 +1,7 @@
 const express=require("express")
 require("dotenv").config()
 const mongoose =require("mongoose")
+const path =require("path")
 
 const cors =require("cors")
 const cookieParser =require("cookie-parser")
@@ -23,7 +24,8 @@ app.use("/api/auth",require("./routes/auth.routes"))
 app.use("/api/public",require("./routes/public.routes"))
 app.use("/api/customer",userProtected,require("./routes/customer.routes"))
 app.use("*",(req,res)=>{
-    res.status(404).json({message:"resource not found"})
+    res.sendFile(path.json(__dirname,"dist","index.html"))//jar konta route find nhi zala tr front end madhe serch karile
+    // res.status(404).json({message:"resource not found"})
 })
 
 
