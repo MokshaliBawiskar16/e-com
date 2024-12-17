@@ -24,7 +24,7 @@ app.use("/api/auth",require("./routes/auth.routes"))
 app.use("/api/public",require("./routes/public.routes"))
 app.use("/api/customer",userProtected,require("./routes/customer.routes"))
 app.use("*",(req,res)=>{
-    res.sendFile(path.json(__dirname,"dist","index.html"))//jar konta route find nhi zala tr front end madhe serch karile
+    res.sendFile(path.join(__dirname,"dist","index.html"))//jar konta route find nhi zala tr front end madhe serch karile
     // res.status(404).json({message:"resource not found"})
 })
 
